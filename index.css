@@ -15,8 +15,8 @@
 }
 
 .keyboard-field {
-    width: 880px;
-    height: 120px;
+    width: 850px;
+    height: 270px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -30,9 +30,10 @@
     height: 50px;
     background: linear-gradient(to right, #6190e8, #a7bfe8);
     border-radius: 5px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+    padding: 0;
 }
 
 .button_resized_middle {
@@ -40,7 +41,15 @@
 }
 
 .button_resized_middle-plus {
-    width: 165px;
+    width: 135px;
+}
+
+.button_resized_two-size {
+    width: 105px;
+}
+
+.button_resized_space {
+    width: 350px;
 }
 
 .button_theme-dark {

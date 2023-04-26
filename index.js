@@ -1,51 +1,5 @@
-
-const buttonsMassFirstString = [
-  {buttonsText: "~",
-    buttonsTheme:"dark"},
-  {buttonsText: "1"},
-  {buttonsText: "2"},
-  {buttonsText: "3"},
-  {buttonsText: "4"},
-  {buttonsText: "5"},
-  {buttonsText: "6"},
-  {buttonsText: "7"},
-  {buttonsText: "8"},
-  {buttonsText: "9"},
-  {buttonsText: "0"},
-  {buttonsText: "-"},
-  {buttonsText: "="},
-  {buttonsText: "← Backspace",
-    buttonsSize:"more-than-middle",
-    buttonsTheme:"dark"
-  },
-]
-
-
-const buttonsMassSecondString = [
-  {buttonsText: "Tab",
-  buttonsSize:"middle",
-  buttonsTheme:"dark"},
-  {buttonsText: "Q"},
-  {buttonsText: "W"},
-  {buttonsText: "E"},
-  {buttonsText: "R"},
-  {buttonsText: "T"},
-  {buttonsText: "Y"},
-  {buttonsText: "U"},
-  {buttonsText: "I"},
-  {buttonsText: "O"},
-  {buttonsText: "P"},
-  {buttonsText: "{"},
-  {buttonsText: "}"},
-  {buttonsText: "\\"},
-  {buttonsText: "Del",
-    buttonsSize:"middle",
-    buttonsTheme:"dark"
-  },
-]
-
-
-
+import {buttonsMassFirstString, buttonsMassSecondString, buttonsMassTherdString, buttonsFourString, buttonsFiveString}
+  from "./utils/constants.js";
 
 const body = document.querySelector("body")
 
@@ -62,6 +16,10 @@ const makeButtons = (button) => {
     case "middle": buttonElement.classList.add("button_resized_middle");
       break;
     case "more-than-middle": buttonElement.classList.add("button_resized_middle-plus");
+      break;
+    case "two-size": buttonElement.classList.add("button_resized_two-size");
+      break;
+    case "space": buttonElement.classList.add("button_resized_space");
       break;
     default:
       break;
@@ -86,7 +44,17 @@ buttonsMassSecondString.map((button)=>{
   makeButtons(button);
 })
 
+buttonsMassTherdString.map((button)=>{
+  makeButtons(button);
+})
 
+buttonsFourString.map((button)=>{
+  makeButtons(button);
+})
+
+buttonsFiveString.map((button)=>{
+  makeButtons(button);
+})
 
 inputElement.className="input";
 keyboardSection.className="keyboard-field";
