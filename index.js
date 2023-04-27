@@ -1,5 +1,6 @@
 import {buttonsMassFirstString, buttonsMassSecondString, buttonsMassTherdString, buttonsFourString, buttonsFiveString}
   from "./utils/constants.js";
+import {ButtonCreator} from "./scripts/ButtonCreator.js"
 
 const body = document.querySelector("body")
 
@@ -8,52 +9,30 @@ body.className="page";
 const inputElement = document.createElement("input");
 const keyboardSection = document.createElement("section");
 
-const makeButtons = (button) => {
-  const buttonElement = document.createElement("button");
-  buttonElement.className="button";
-
-  switch (button.buttonsSize) {
-    case "middle": buttonElement.classList.add("button_resized_middle");
-      break;
-    case "more-than-middle": buttonElement.classList.add("button_resized_middle-plus");
-      break;
-    case "two-size": buttonElement.classList.add("button_resized_two-size");
-      break;
-    case "space": buttonElement.classList.add("button_resized_space");
-      break;
-    default:
-      break;
-  }
-
-  if(button.buttonsTheme){
-    buttonElement.classList.add("button_theme-dark");
-  }
-
-
-  const buttonText = document.createTextNode(button.buttonsText);
-  buttonElement.prepend(buttonText);
-  keyboardSection.append(buttonElement);
-  console.log(button.buttonsText);
-}
 
 buttonsMassFirstString.map((button)=>{
-  makeButtons(button);
+  const buttonMaker = new ButtonCreator(button, keyboardSection);
+  buttonMaker.makeButtons();
 })
 
 buttonsMassSecondString.map((button)=>{
-  makeButtons(button);
+  const buttonMaker = new ButtonCreator(button, keyboardSection);
+  buttonMaker.makeButtons();
 })
 
 buttonsMassTherdString.map((button)=>{
-  makeButtons(button);
+  const buttonMaker = new ButtonCreator(button, keyboardSection);
+  buttonMaker.makeButtons();
 })
 
 buttonsFourString.map((button)=>{
-  makeButtons(button);
+  const buttonMaker = new ButtonCreator(button, keyboardSection);
+  buttonMaker.makeButtons();
 })
 
 buttonsFiveString.map((button)=>{
-  makeButtons(button);
+  const buttonMaker = new ButtonCreator(button, keyboardSection);
+  buttonMaker.makeButtons();
 })
 
 inputElement.className="input";
