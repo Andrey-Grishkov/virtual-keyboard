@@ -44,5 +44,5 @@ body.append(keyboardSection);
 
 const ButtonsListener = new ButtonListener(keyboardSection, inputElement);
 ButtonsListener.setEventListeners();
-
+ButtonsListener.setKeyEventListeners();
 

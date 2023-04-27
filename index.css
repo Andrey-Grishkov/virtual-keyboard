@@ -33,7 +33,19 @@
     font-weight: 600;
     cursor: pointer;
     padding: 0;
+    position: relative;
 }
+
+.button:active {
+    background: linear-gradient(to right, #61bb7a, #3fb452);
+    border-radius: 1000px;
+}
+
+.button_active {
+    background: linear-gradient(to right, #61bb7a, #3fb452);
+    border-radius: 1000px;
+}
+
 
 .button_resized_middle {
     width: 80px;
@@ -53,4 +65,12 @@
 
 .button_theme-dark {
     background: linear-gradient(to right, #174897, #667393);
+}
+
+.button__span-text {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 14px;
+    font-weight: 600;
 }

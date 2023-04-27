@@ -20,4 +20,15 @@ export class ButtonListener {
       console.log(event.target);
     });
   }
+
+  setKeyEventListeners() {
+    document.addEventListener("keydown", (event) => {
+
+      this.inputElement.value = this.inputElement.value + event.key;
+
+
+
+
+    });
+  }
 }

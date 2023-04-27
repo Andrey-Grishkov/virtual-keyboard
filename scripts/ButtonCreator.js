@@ -37,5 +37,18 @@ export class ButtonCreator {
 
     buttonElement.append(buttonText);
     this.keyboardSection.append(buttonElement);
+
+    document.addEventListener("keydown", (event) => {
+      if(this.button.keyCode === event.code){
+        buttonElement.classList.add('button_active');
+      }
+    });
+
+    document.addEventListener("keyup", (event) => {
+      if(this.button.keyCode === event.code){
+        buttonElement.classList.remove('button_active');
+      }
+    });
+
   }
 }
