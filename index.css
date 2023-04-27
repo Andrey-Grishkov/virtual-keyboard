@@ -36,17 +36,6 @@
     position: relative;
 }
 
-.button:active {
-    background: linear-gradient(to right, #61bb7a, #3fb452);
-    border-radius: 1000px;
-}
-
-.button_active {
-    background: linear-gradient(to right, #61bb7a, #3fb452);
-    border-radius: 1000px;
-}
-
-
 .button_resized_middle {
     width: 80px;
 }
@@ -65,6 +54,16 @@
 
 .button_theme-dark {
     background: linear-gradient(to right, #174897, #667393);
+}
+
+.button:active {
+    background: linear-gradient(to right, #61bb7a, #3fb452);
+    border-radius: 1000px;
+}
+
+.button_active {
+    background: linear-gradient(to right, #61bb7a, #3fb452);
+    border-radius: 1000px;
 }
 
 .button__span-text {

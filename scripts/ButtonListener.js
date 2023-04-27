@@ -26,6 +26,8 @@ export class ButtonListener {
 
       this.inputElement.value = this.inputElement.value + event.key;
 
+      console.log(event.code)
+
 
 
 
