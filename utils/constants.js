@@ -1,7 +1,9 @@
 const buttonsMassFirstString = [
   {buttonsText: "~",
     buttonsTheme:"dark"},
-  {buttonsText: "1"},
+  {buttonsText: "1",
+  secondText: "!"
+  },
   {buttonsText: "2"},
   {buttonsText: "3"},
   {buttonsText: "4"},

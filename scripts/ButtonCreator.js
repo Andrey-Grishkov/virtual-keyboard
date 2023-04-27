@@ -6,7 +6,9 @@ export class ButtonCreator {
 
   makeButtons(){
     const buttonElement = document.createElement("button");
+    const buttonSpanText = document.createElement("span");
     buttonElement.className="button";
+    buttonSpanText.className="button__span-text";
 
     switch (this.button.buttonsSize) {
       case "middle": buttonElement.classList.add("button_resized_middle");
@@ -25,9 +27,15 @@ export class ButtonCreator {
       buttonElement.classList.add("button_theme-dark");
     }
 
+    if(this.button.secondText){
+      const buttonSecondText = document.createTextNode(this.button.secondText);
+      buttonSpanText.append(buttonSecondText);
+      buttonElement.prepend(buttonSpanText);
+    }
+
     const buttonText = document.createTextNode(this.button.buttonsText);
 
-    buttonElement.prepend(buttonText);
+    buttonElement.append(buttonText);
     this.keyboardSection.append(buttonElement);
   }
 }

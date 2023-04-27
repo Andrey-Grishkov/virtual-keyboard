@@ -37,8 +37,6 @@ buttonsFiveString.map((button)=>{
 })
 //_______________________________________________________________________________________________________________________
 
-
-
 inputElement.className="input";
 keyboardSection.className="keyboard-field";
 body.prepend(inputElement);
