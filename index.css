@@ -6,8 +6,15 @@
     align-items: center;
 }
 
+.title {
+    margin: 20px 0 20px 0;
+    font-size: 32px;
+    font-weight: 600;
+    color: #174897;
+}
+
 .input {
-    width: 90%;
+    width: 850px;
     height: 200px;
     font-size: 24px;
     font-weight: 600;
@@ -19,7 +26,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    border: coral 1px solid;
     gap: 5px;
     flex-wrap: wrap;
 }

@@ -7,7 +7,8 @@ const body = document.querySelector("body")
 
 body.className="page";
 
-const inputElement = document.createElement("input");
+const titleElement = document.createElement("h1");
+const inputElement = document.createElement("textarea");
 const keyboardSection = document.createElement("section");
 
 //_______________________________________Buttons Create________________________________________________________
@@ -37,12 +38,19 @@ buttonsFiveString.map((button)=>{
 })
 //_______________________________________________________________________________________________________________________
 
+titleElement.className="title";
+const titleElementText = document.createTextNode("Virtual Keyboard");
+titleElement.append(titleElementText);
+
 inputElement.className="input";
 keyboardSection.className="keyboard-field";
-body.prepend(inputElement);
+body.prepend(titleElement);
+body.append(inputElement);
 body.append(keyboardSection);
 
 const ButtonsListener = new ButtonListener(keyboardSection, inputElement);
 ButtonsListener.setEventListeners();
 ButtonsListener.setKeyEventListeners();
 
+
+console.log(titleElement, "titleElement")
