@@ -2,16 +2,11 @@ import {SpecialButtons} from "./SpecialButtons.js"
 
 export class ButtonListener {
   constructor(keyboardSection, inputElement) {
-    this.keyboardSection = keyboardSection;
     this.inputElement = inputElement;
-    this.cursorStart = this.inputElement.selectionStart;
-    this.cursorEnd = this.inputElement.selectionEnd;
   }
 
   setEventListeners() {
     document.addEventListener("click", (event) => {
-
-
 
       if (event.target.tagName !== "BUTTON") {
         return;
@@ -29,11 +24,11 @@ export class ButtonListener {
         buttonContent = event.target.textContent;
       }
 
-      this.inputElement.value = this.inputElement.value + buttonContent;
-      // this.cursorStart = this.cursorStart +1;
-      // this.cursorEnd = this.cursorEnd +1;
+      if (event.target.id === "ShiftRight" || event.target.id === "ShiftLeft"){
+        return
+      }
 
-      console.log(this.cursorStart, this.cursorEnd, "Backspace - click");
+      this.inputElement.value = this.inputElement.value + buttonContent.toLowerCase();
     });
   }
 
@@ -46,11 +41,12 @@ export class ButtonListener {
         return specialButtons.Backspace();
       }
 
-        this.inputElement.value = this.inputElement.value + event.key;
-        // this.cursorStart = this.cursorStart +1;
-        // this.cursorEnd = this.cursorEnd +1;
+      console.log(event.key);
 
-      console.log(this.cursorStart, this.cursorEnd, "Backspace - keydown");
+      if (event.key === "Shift"){
+        return
+      }
+        this.inputElement.value = this.inputElement.value + event.key;
     });
   }
 }
