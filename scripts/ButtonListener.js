@@ -1,36 +1,60 @@
+import {SpecialButtons} from "./SpecialButtons.js"
+
 export class ButtonListener {
   constructor(keyboardSection, inputElement) {
-    this.keyboardSection = keyboardSection;
     this.inputElement = inputElement;
   }
 
   setEventListeners() {
-    this.keyboardSection.addEventListener("click", (event) => {
+    document.addEventListener("click", (event) => {
+
       if (event.target.tagName !== "BUTTON") {
         return;
       }
       let buttonContent
+      const specialButtons = new SpecialButtons(this.inputElement);
+
+      if (event.target.id === "Backspace") {
+        return specialButtons.Backspace();
+      }
+
       if (event.target.textContent.length > 1) {
         buttonContent = event.target.textContent[1];
       } else {
         buttonContent = event.target.textContent;
       }
 
-      this.inputElement.value = this.inputElement.value + buttonContent;
-      console.log(event.target);
+      if (event.target.id === "ShiftRight" || event.target.id === "ShiftLeft"){
+        return
+      }
+
+      this.inputElement.value = this.inputElement.value + buttonContent.toLowerCase();
     });
   }
 
   setKeyEventListeners() {
     document.addEventListener("keydown", (event) => {
 
-      this.inputElement.value = this.inputElement.value + event.key;
+      const specialButtons = new SpecialButtons(this.inputElement);
 
-      console.log(event.code)
+      if (event.key === "Backspace") {
+        return specialButtons.Backspace();
+      }
+
+      console.log(event.key);
+
+      if (event.key === "Shift" && event.key === "Control"){
+
+      }
+
+      if (event.key === "Shift" || event.key === "Control"){
+        return
+      }
 
 
 
 
+        this.inputElement.value = this.inputElement.value + event.key;
     });
   }
 }

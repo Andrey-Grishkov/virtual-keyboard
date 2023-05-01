@@ -1,3 +1,4 @@
+
 export class ButtonCreator {
   constructor(button, keyboardSection) {
     this.button = button;
@@ -37,6 +38,8 @@ export class ButtonCreator {
 
     buttonElement.append(buttonText);
     this.keyboardSection.append(buttonElement);
+
+    buttonElement.id = this.button.keyCode;
 
     document.addEventListener("keydown", (event) => {
       if(this.button.keyCode === event.code){

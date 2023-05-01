@@ -52,5 +52,3 @@ const ButtonsListener = new ButtonListener(keyboardSection, inputElement);
 ButtonsListener.setEventListeners();
 ButtonsListener.setKeyEventListeners();
 
-
-console.log(titleElement, "titleElement")
