@@ -43,9 +43,17 @@ export class ButtonListener {
 
       console.log(event.key);
 
-      if (event.key === "Shift"){
+      if (event.key === "Shift" && event.key === "Control"){
+
+      }
+
+      if (event.key === "Shift" || event.key === "Control"){
         return
       }
+
+
+
+
         this.inputElement.value = this.inputElement.value + event.key;
     });
   }
