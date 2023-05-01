@@ -52,5 +52,7 @@ const ButtonsListener = new ButtonListener(keyboardSection, inputElement);
 ButtonsListener.setEventListeners();
 ButtonsListener.setKeyEventListeners();
 
+let phraze = "Moy miluy xui"
 
-console.log(titleElement, "titleElement")
+console.log(phraze.slice(0, 3) + phraze.slice(4))
+
