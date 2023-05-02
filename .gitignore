@@ -1,3 +1,7 @@
+.node_modules/
+node_modules/
+idea/
+
 ### AL ###
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
@@ -23,4 +27,4 @@ TestResults.xml
 
 .idea/
 
-.node_modules/
+
