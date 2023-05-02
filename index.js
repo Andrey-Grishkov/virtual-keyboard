@@ -1,49 +1,52 @@
-import {buttonsMassFirstString, buttonsMassSecondString, buttonsMassTherdString, buttonsFourString, buttonsFiveString}
-  from "./utils/constants.js";
-import {ButtonCreator} from "./scripts/ButtonCreator.js"
-import {ButtonListener} from "./scripts/ButtonListener.js"
+import {
+  buttonsFourString,
+  buttonsFiveString,
+  buttonsMassFirstString,
+  buttonsMassSecondString,
+  buttonsMassTherdString,
+} from "./utils/constants.js";
+import { ButtonCreator } from "./scripts/ButtonCreator.js";
+import { ButtonListener } from "./scripts/ButtonListener.js";
 
-const body = document.querySelector("body")
+const body = document.querySelector("body");
 
-body.className="page";
+body.className = "page";
 
 const titleElement = document.createElement("h1");
 const inputElement = document.createElement("textarea");
 const keyboardSection = document.createElement("section");
 
-//_______________________________________Buttons Create________________________________________________________
-buttonsMassFirstString.map((button)=>{
+buttonsMassFirstString.map((button) => {
   const buttonMaker = new ButtonCreator(button, keyboardSection);
-  buttonMaker.makeButtons();
-})
+  return buttonMaker.makeButtons();
+});
 
-buttonsMassSecondString.map((button)=>{
+buttonsMassSecondString.map((button) => {
   const buttonMaker = new ButtonCreator(button, keyboardSection);
-  buttonMaker.makeButtons();
-})
+  return buttonMaker.makeButtons();
+});
 
-buttonsMassTherdString.map((button)=>{
+buttonsMassTherdString.map((button) => {
   const buttonMaker = new ButtonCreator(button, keyboardSection);
-  buttonMaker.makeButtons();
-})
+  return buttonMaker.makeButtons();
+});
 
-buttonsFourString.map((button)=>{
+buttonsFourString.map((button) => {
   const buttonMaker = new ButtonCreator(button, keyboardSection);
-  buttonMaker.makeButtons();
-})
+  return buttonMaker.makeButtons();
+});
 
-buttonsFiveString.map((button)=>{
+buttonsFiveString.map((button) => {
   const buttonMaker = new ButtonCreator(button, keyboardSection);
-  buttonMaker.makeButtons();
-})
-//_______________________________________________________________________________________________________________________
+  return buttonMaker.makeButtons();
+});
 
-titleElement.className="title";
+titleElement.className = "title";
 const titleElementText = document.createTextNode("Virtual Keyboard");
 titleElement.append(titleElementText);
 
-inputElement.className="input";
-keyboardSection.className="keyboard-field";
+inputElement.className = "input";
+keyboardSection.className = "keyboard-field";
 body.prepend(titleElement);
 body.append(inputElement);
 body.append(keyboardSection);
@@ -51,4 +54,3 @@ body.append(keyboardSection);
 const ButtonsListener = new ButtonListener(keyboardSection, inputElement);
 ButtonsListener.setEventListeners();
 ButtonsListener.setKeyEventListeners();
-

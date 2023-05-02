@@ -1,15 +1,14 @@
-
 export class ButtonCreator {
   constructor(button, keyboardSection) {
     this.button = button;
     this.keyboardSection = keyboardSection;
   }
 
-  makeButtons(){
+  makeButtons() {
     const buttonElement = document.createElement("button");
     const buttonSpanText = document.createElement("span");
-    buttonElement.className="button";
-    buttonSpanText.className="button__span-text";
+    buttonElement.className = "button";
+    buttonSpanText.className = "button__span-text";
 
     switch (this.button.buttonsSize) {
       case "middle": buttonElement.classList.add("button_resized_middle");
@@ -24,11 +23,11 @@ export class ButtonCreator {
         break;
     }
 
-    if(this.button.buttonsTheme){
+    if (this.button.buttonsTheme) {
       buttonElement.classList.add("button_theme-dark");
     }
 
-    if(this.button.secondText){
+    if (this.button.secondText) {
       const buttonSecondText = document.createTextNode(this.button.secondText);
       buttonSpanText.append(buttonSecondText);
       buttonElement.prepend(buttonSpanText);
@@ -42,16 +41,15 @@ export class ButtonCreator {
     buttonElement.id = this.button.keyCode;
 
     document.addEventListener("keydown", (event) => {
-      if(this.button.keyCode === event.code){
-        buttonElement.classList.add('button_active');
+      if (this.button.keyCode === event.code) {
+        buttonElement.classList.add("button_active");
       }
     });
 
     document.addEventListener("keyup", (event) => {
-      if(this.button.keyCode === event.code){
-        buttonElement.classList.remove('button_active');
+      if (this.button.keyCode === event.code) {
+        buttonElement.classList.remove("button_active");
       }
     });
-
   }
 }
